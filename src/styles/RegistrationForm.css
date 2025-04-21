@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;500;700&display=swap");
+
+:root {
+  --primary-color: #4a6fdc;
+  --primary-light: #e8eeff;
+  --secondary-color: #f8f9fa;
+  --border-color: #e6e6e6;
+  --text-color: #333;
+  --error-color: #d32f2f;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #f5f7fa;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 0;
+  padding: 0;
+  padding-bottom: 0;
+  width: 100%;
+  text-align: left;
+  line-height: 1;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333c4d;
+  margin: 0;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: left;
+  line-height: 1;
+}
+
+.form-container {
+  padding: 30px;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.required {
+  color: var(--error-color);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+/* Chrome autofill styles */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover,
+.form-group input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-color);
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Firefox autofill styles */
+.form-group input:autofill {
+  background-color: white !important;
+  color: var(--text-color) !important;
+}
+
+.form-group input::selection {
+  background-color: var(--primary-light);
+  color: var(--text-color);
+}
+
+.form-group input::-moz-selection {
+  background-color: var(--primary-light);
+  color: var(--text-color);
+}
+
+.form-group input::placeholder {
+  color: #999;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(74, 111, 220, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #aaa;
+  color: white;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Tablet & below */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+  }
+
+  header {
+    margin-right: 0;
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .registration-form {
+    padding: 1rem 0;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .field-row-inline {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .field-column {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .form-container {
+    padding: 16px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+/* Common styling for all field labels */
+p.school-name-label,
+p.district-label,
+p.category-label,
+p.udise-label,
+p.ebrc-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16.3px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  padding: 0;
+  text-align: left;
+  display: block;
+  width: 100%;
+  color: #333;
+}
+
+/* Specifically target the School Name label to reduce space */
+p.school-name-label {
+  margin-bottom: 4px;
+  margin-top: 0;
+  padding-top: 0;
+  line-height: 1.2;
+}
+
+/* Input styling for all text inputs */
+input#schoolName,
+input#udise,
+input#ebrc {
+  border-radius: 8px;
+  width: 100%;
+  border: 1px solid #C6C6C6;
+  height: 50px;
+  padding-left: 13px;
+  padding-right: 5px;
+  color: #222;
+  font-size: 16px;
+  background-color: white;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;    
+}
+
+.custom-select select {
+  width: 100%;
+  padding: 10px 16px;
+  padding-right: 40px;
+  border: 1px solid #C6C6C6;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  height: 50px;
+}
+
+.custom-select select:focus {
+  box-shadow: 0 0 0 3px rgba(74, 111, 220, 0.2);
+  border-color: var(--primary-color);
+}
+
+/* the arrow */
+.custom-select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #333;
+  transform: translateY(-50%);
+}
+
+/* Remove increment/decrement arrows from number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Field row layout for vertical alignment */
+.field-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+  position: relative;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.field-row input,
+.field-row .custom-select,
+.field-row select {
+  width: 100%;
+  border-radius: 8px;
+  height: 50px;
+}
+
+/* Position error messages below the input */
+.field-row .error-message,
+.field-column .error-message {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  font-size: 12px;
+  color: var(--error-color);
+}
+
+.form-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+/* First field row (School Name) should have less gap */
+.form-content .field-row:first-child {
+  margin-top: 0;
+}
+
+.field-row-inline {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.field-column {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+.school-name-row {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.form-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333c4d;
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  text-align: left;
+  line-height: 1;
+}
